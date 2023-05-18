@@ -9,6 +9,8 @@ WORKDIR /src
 COPY ["MvcToDoList.csproj", "."]
 RUN dotnet restore "./MvcToDoList.csproj"
 COPY . .
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    aspnetcore-runtime-6.0
 WORKDIR "/src/."
 RUN dotnet build "MvcToDoList.csproj" -c Release -o /app/build
 
