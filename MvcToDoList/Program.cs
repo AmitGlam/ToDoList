@@ -2,6 +2,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using MvcToDoList.Data;
 using MvcToDoList.Models;
+using Rook;
+Rook.RookOptions options = new Rook.RookOptions()
+{
+    token = "86044e31c8627ca8e6fc0c7bb1ef5e2593782db9e3b5f826847dbf20a3b6ba9a",
+    labels = new Dictionary<string, string> { { "env", "Amit" } }
+};
+Rook.API.Start(options);
 
 var builder = WebApplication.CreateBuilder(args);
 
